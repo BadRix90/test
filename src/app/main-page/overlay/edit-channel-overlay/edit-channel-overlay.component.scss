@@ -1,0 +1,392 @@
+@import './../../../mixin.scss';
+
+.h3 {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+}
+
+h4 {
+    transition: all ease .25s;
+    margin-block: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+    gap: .5rem
+}
+
+span {
+    margin: 0 .5rem 0 0;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.sign {
+    font-size: 24px;
+}
+
+.input-field {
+    width: 93%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 1rem .75rem;
+
+    input {
+        width: 90%;
+        border: unset;
+        outline: unset;
+        font-size: 18px;
+        font-weight: 400;
+
+        &:disabled {
+            background-color: transparent;
+            color: rgba(0, 0, 0, 0.9);
+        }
+    }
+
+}
+
+.hover-input {
+    &:hover {
+        border-color: $lightPurple !important;
+    }
+
+    &:focus-within {
+        border-color: $purple1;
+    }
+}
+
+#channel-name-container {
+    position: relative;
+    height: 4rem;
+    padding: 1rem;
+    transition: all ease .25s;
+}
+
+
+#channel-author {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--purple3);
+}
+
+
+#channel-description-container {
+    border: 1px solid var(--lightPurple);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all ease .25s;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.stroke-div {
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--lightPurple);
+}
+
+.hint {
+    text-align: center;
+    color: var(--rosaError);
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.border-color {
+    border-color: var(--rosaError) !important;
+}
+
+.h4-translate {
+    h4:first-of-type {
+        transform: translate(-1rem, -1rem);
+    }
+
+    h4:last-of-type {
+        transform: translate(1rem, -1rem);
+    }
+}
+
+.edit {
+    animation: shift-down .25s ease forwards;
+    -webkit-animation: shift-down .25s ease forwards;
+    -moz-animation: shift-down .25s ease forwards;
+}
+
+#save {
+    animation: shift-up .25s ease forwards;
+    -webkit-animation: shift-up .25s ease forwards;
+    -moz-animation: shift-up .25s ease forwards;
+}
+
+
+.channel-edit-part {
+    display: flex;
+    justify-content: space-between;
+
+    h4:last-of-type {
+        z-index: 2;
+        color: var(--purple3);
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover {
+            cursor: pointer;
+            color: $purple1;
+        }
+    }
+}
+
+.border-container {
+    border: 1px solid var(--lightPurple);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    transition: all ease .25s;
+}
+
+.shrink-container {
+    height: 46%;
+    border-radius: 2rem;
+}
+
+.description-input {
+    border: 1px solid var(--lightPurple);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    transition: all ease .25s;
+    height: 100%;
+    border-radius: 1rem;
+
+}
+
+#description-input-field {
+    padding: .75rem;
+    border: 1px solid var(--lightPurple);
+    border-radius: 30px;
+    transition: all ease .25s;
+    outline: unset;
+    margin-bottom: -4rem;
+    opacity: 0;
+    font-size: 17px;
+    font-weight: 400;
+    resize: none;
+    max-height: 100px;
+}
+
+#description {
+    margin-left: 1.45rem
+}
+
+#description-content {
+    opacity: 1;
+}
+
+.transparent {
+    opacity: 0 !important;
+    z-index: -1;
+}
+
+.visible-description-input {
+    opacity: 1 !important;
+    margin-bottom: -2rem !important;
+}
+
+.border-transparent {
+    border-color: transparent !important;
+}
+
+.close-btn {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    background-color: transparent;
+    transition: all ease .1s;
+    border: unset;
+    @include dFlex(center, center);
+    transform: scale(1.1);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: $bgColor;
+        cursor: pointer;
+
+        #cross {
+            transform: scale(1.1);
+
+            path {
+                fill: $purple1;
+            }
+        }
+    }
+}
+
+.leave-channel-btn {
+    margin-top: 1.5rem;
+    padding: 10px 21px;
+    border-radius: 2rem;
+    align-self: flex-end;
+    border: unset;
+    transition: all ease .1s;
+    background-color: $purple3;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:not(:disabled):hover {
+        cursor: pointer;
+        background-color: $purple2;
+    }
+
+    &:active {
+        background-color: $purple1 !important;
+    }
+}
+
+.edit-channel-overlay {
+    @include container();
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 1.5rem;
+    background-color: white;
+    border-radius: 0 2rem 2rem;
+    min-width: 380px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.description-text {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+@-webkit-keyframes shift-down {
+    0% {
+        transform: translate(1rem, -1rem);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shift-down {
+    0% {
+        transform: translate(1rem, -1rem);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes shift-up {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(1rem, -1rem);
+    }
+}
+
+@keyframes shift-up {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(1rem, -1rem);
+    }
+}
+
+
+// max-width
+@media only screen and (max-width: 600px) {
+    .edit-channel-overlay {
+        padding: 0 16px 14px;
+        max-width: none;
+        overflow-y: auto;
+    }
+
+    .h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 290px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 278px;
+    }
+
+    .input-field {
+        font-size: 17px;
+
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+
+    .edit-channel-overlay {
+        min-width: 312px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .edit-channel-overlay {
+        border-radius: 0;
+        min-width: 92vw;
+        max-height: none;
+    }
+
+    .h3 {
+        margin-top: 48px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 270px;
+        font-size: 23px;
+    }
+
+    .close-btn {
+        top: 50px;
+        right: 8px;
+    }
+}
+
+// min-height
+@media only screen and (max-height: 715px) and (min-width: 600px) {
+    .edit-channel-overlay {
+        height: 73vh;
+        max-height: 73vh;
+        border-radius: 2rem;
+    }
+}

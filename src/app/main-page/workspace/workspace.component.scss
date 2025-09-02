@@ -1,0 +1,58 @@
+@import './../../mixin.scss';
+
+app-workspace-dropdown {
+    align-self: flex-start;
+    width: 90%;
+    user-select: none;
+    display: contents;
+}
+
+section {
+    overflow: hidden auto;
+    margin-bottom: 1.5rem;
+}
+
+#plus {
+    transform: scale(1.1);
+    border-radius: 50%;
+    transition: all ease .025s;
+    position: absolute;
+    right: 18px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        background-color: $bgColor;
+
+        path {
+            fill: #4c5acb;
+        }
+    }
+}
+
+.exclude-flex {
+    display: flex;
+    position: absolute;
+    left: 2rem;
+    gap: 1rem
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+// max-width
+@media only screen and (max-width: 900px) {
+    app-workspace-header {
+        display: none;
+    }
+
+    app-search-bar {
+        display: inline !important;
+    }
+
+    section {
+        width: 100%;
+    }
+}

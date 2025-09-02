@@ -1,0 +1,27 @@
+@import '../../../mixin.scss';
+
+#workspace-header {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    gap: 24px;
+
+    div:hover{
+        cursor: default;
+    }
+}
+
+#edit-square {
+    path{
+        transition: all ease .125s;
+    } 
+
+    &:hover {
+        cursor: pointer;
+        path {
+            fill: $purple1;
+        }
+    }
+}

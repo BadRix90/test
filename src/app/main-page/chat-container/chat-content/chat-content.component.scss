@@ -1,0 +1,48 @@
+@import '../../../mixin.scss';
+
+app-chat-message {
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+
+.channel-message-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.empty-text {
+    margin: 24px 1.5rem 20px 1.5rem;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.top-text {
+    margin: 24px 1.5rem 20px 1.5rem;
+    font-size: 18px;
+    cursor: pointer;
+
+    span {
+        color: var(--purple3);
+    }
+}
+
+
+// max-width
+@media only screen and (max-width: 500px) {
+    .top-text {
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    .empty-text {
+        font-size: 17px;
+    }
+}

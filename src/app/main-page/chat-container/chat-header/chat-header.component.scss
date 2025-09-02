@@ -1,0 +1,325 @@
+@import './../../../mixin.scss';
+
+.chat-container-header {
+    @include dFlex(space-between, center);
+    color: black;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.chat-head-title {
+    @include dFlex();
+    gap: 10px;
+    padding: 5px 10px;
+
+    &:hover {
+        @include hoverEffect();
+
+        path {
+            fill: $purple1;
+            transition: ease-in 150ms;
+        }
+    }
+
+    img {
+        height: 32px;
+    }
+
+    span {
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: left;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.chat-member-section {
+    @include dFlex();
+    gap: 10px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.chat-head-members {
+    @include dFlex();
+    gap: 10px;
+    padding: 2px 10px;
+
+    &:hover {
+        @include hoverEffect();
+    }
+}
+
+.member-icons {
+    @include dFlex();
+    position: relative;
+    flex-direction: row-reverse;
+    max-width: 237px;
+    overflow: auto hidden;
+}
+
+.member-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 2px solid white;
+    object-fit: cover;
+
+    &:not(:first-child) {
+        margin-right: -10px;
+    }
+}
+
+.plus {
+    background-color: white;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 12px 2px;
+}
+
+.add-member-button {
+    height: 33px;
+    max-height: 33px;
+
+    &:hover {
+        transition: ease-in 150ms;
+        cursor: pointer;
+    }
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 5px 12px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ECEEFE;
+        border-radius: 30px;
+    }
+}
+
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    z-index: 3;
+}
+
+app-edit-channel-overlay {
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    right: 1.5rem;
+}
+
+app-members-overlay {
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 1.5rem;
+    border-radius: 30px 0px 30px 30px;
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+app-add-member-overlay {
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 1.5rem;
+}
+
+.mobileView {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    height: 1.5px !important;
+}
+
+
+// max-width
+@media only screen and (max-width: 1500px) {
+    .member-icons {
+        max-width: 128px;
+    }
+}
+
+@media only screen and (max-width: 1455px) {
+    .chat-head-title {
+        span {
+            max-width: 192px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .chat-head-title {
+        span {
+            max-width: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1032px) {
+    .chat-head-title {
+        span {
+            max-width: 189px;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .member-icons {
+        max-width: 260px;
+    }
+
+    .chat-head-title {
+        span {
+            max-width: none;
+        }
+    }
+
+    .chat-head-members {
+        display: none;
+    }
+
+    .normalView {
+        display: none;
+    }
+
+    .mobileView {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .member-icons {
+        max-width: 128px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .chat-head-title {
+        span {
+            font-size: 22px;
+        }
+    }
+
+    .arrow {
+        width: 28px;
+        height: 28px;
+    }
+
+    .add-member-button {
+        height: 35px;
+        max-height: 35px;
+    }
+
+    .chat-head-title {
+        span {
+            max-width: 192px;
+        }
+    }
+
+    .profile-container {
+        font-size: 22px;
+        gap: 12px;
+    }
+
+    .profile-image {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #main-content {
+        padding: 0;
+    }
+
+    .chat-member-section {
+        padding-right: 0;
+    }
+
+    .chat-container-header {
+        padding: 0 1.5rem;
+    }
+
+    .chat-head-title {
+        padding: 0;
+        margin-left: -2px;
+        gap: 2px;
+
+        span {
+            max-width: 196px;
+            font-size: 20px;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .arrow {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .profile-container span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 227px;
+    }
+
+    app-edit-channel-overlay {
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: fixed;
+    }
+
+    app-members-overlay {
+        top: 100%;
+        left: 12px;
+        right: 12px;
+    }
+
+    app-add-member-overlay {
+        right: 9px;
+    }
+}
+
+// max-height
+@media only screen and (max-height: 715px) and (min-width: 600px) {
+    app-edit-channel-overlay {
+        top: -50px;
+    }
+}

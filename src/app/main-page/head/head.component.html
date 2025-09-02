@@ -1,0 +1,16 @@
+<header (click)="hideSearchList()">
+    <img *ngIf="(showWorkspace && mobileView) || (showWorkspace && !mobileView)  || !mobileView" class="head-logo" src="assets/img/general/dabubble-logo.svg">
+    <div (click)="openWorkspace()" *ngIf="((showThread && mobileView) || (!showWorkspace && mobileView)) && !showWorkspace" class="devspace-mobile">
+        <img class="arrow-left" src="assets/img/main-page/head/arrow-left.svg">
+        <img class="devspace-logo" src="assets/img/main-page/workspace/workspace-logo.svg">
+        <span>Devspace</span>
+    </div>
+    <div class="function-container">
+        <app-search-bar></app-search-bar>
+        <div (click)="openDropdownMenu($event); hideSearchList()" class="user-container">
+            <span>{{ name }}</span>
+            <img class="profile-img" [src]="imgSrc">
+            <div class="arrow-img"></div>
+        </div>
+    </div>
+</header>

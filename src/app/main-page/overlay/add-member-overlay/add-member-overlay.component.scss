@@ -1,0 +1,247 @@
+@import '../../../mixin.scss';
+
+.add-member-overview-container {
+    @include dFlex(center, start);
+    flex-direction: column;
+}
+
+section {
+    @include container();
+    display: flex;
+    padding: 40px;
+    border-radius: 30px 0px 30px 30px;
+    gap: 20px;
+}
+
+.add-member-header {
+    @include dFlex(space-between, center);
+    @include scaleElement();
+    gap: 100px;
+
+    span {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 33px;
+        letter-spacing: 0em;
+        padding-bottom: 5px;
+    }
+
+    svg {
+        padding: 5px;
+
+        &:hover {
+            cursor: pointer;
+            fill: $purple2;
+            background-color: $bgColor;
+            border-radius: 100%;
+
+            path {
+                fill: $purple2;
+                transition: ease-in 150ms;
+            }
+        }
+    }
+}
+
+.channel-name {
+    color: $purple2;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    padding-bottom: 20px;
+}
+
+.form-container {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+}
+
+.input-field {
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid $lightPurple;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.55px;
+    text-align: left;
+
+    &:hover {
+        border: 1px solid $purple2;
+    }
+}
+
+.member-suggestion-box {
+    @include dFlex(center, start);
+    box-shadow: 0px 6px 10px 0px #00000033;
+    border-radius: 0 30px 30px 30px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 10px;
+    overflow: hidden auto;
+    max-height: 330px;
+    justify-content: unset;
+    box-sizing: border-box;
+    min-width: 365px;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    gap: 15px;
+    padding: 4px 12px;
+    width: 100%;
+    min-width: 300px;
+    box-sizing: border-box;
+    position: relative;
+
+    &:hover {
+        transition: ease-in 150ms;
+        cursor: pointer;
+        background-color: $bgColor;
+        border-radius: 30px;
+        color: $purple3;
+    }
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.add-btn-disabled {
+    justify-self: flex-end;
+    padding: 11px 23px;
+    border-radius: 25px;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: var(--lighterPurple);
+    border: 2px solid var(--lightPurple);
+    font-size: 16px;
+}
+
+.add-btn-active {
+    justify-self: flex-end;
+    padding: 11px 23px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: $purple1;
+    font-size: 16px;
+
+    &:hover {
+        transition: ease-in 150ms;
+        cursor: pointer;
+        background-color: $purple2;
+    }
+}
+
+.input-field.selected {
+    font-weight: 500;
+    text-shadow: 0 0 20px var(--purple1);
+}
+
+.checkmark {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: absolute;
+    right: 11px;
+}
+
+.checkmark.checked {
+    background-color: rgb(68, 77, 242);
+    border-color: rgb(68, 77, 242);
+}
+
+.checkmark-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 500px) {
+    section {
+        padding: 24px;
+    }
+
+    .add-member-header {
+        gap: 80px;
+    }
+
+    .input-field {
+        font-size: 17px;
+
+        &::placeholder {
+            font-size: 16px;
+        }
+    }
+
+    .checkmark {
+        right: 10px;
+        min-width: 16px;
+        min-height: 16px;
+    }
+
+    .user-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 133px;
+        font-size: 17px;
+    }
+
+    .user-box {
+        gap: 12px;
+        padding: 4px 9px;
+        min-width: 247px;
+    }
+
+    .member-suggestion-box {
+        min-width: unset;
+    }
+
+    .user-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    section {
+        padding: 16px;
+    }
+
+    .add-member-header {
+        gap: 40px;
+
+        span {
+            font-size: 23px;
+        }
+    }
+}
+
+@media only screen and (max-height: 845px) {
+    .member-suggestion-box {
+        max-height: 214px;
+    }
+}

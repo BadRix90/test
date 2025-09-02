@@ -1,0 +1,11 @@
+<div *ngIf="authService.animation" class="background">
+    <span class="text">DABubble</span>
+</div>
+
+<div *ngIf="authService.animation" class="middle-layer"></div>
+
+<div *ngIf="authService.animation" class="front-layer">
+    <img class="logo" src="assets/img/general/Logo.svg">
+</div>
+
+<img *ngIf="!authService.animation && authService.showSlideAnimation" class="endLogo" src="assets/img/general/dabubble-logo.svg">

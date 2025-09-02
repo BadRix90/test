@@ -1,0 +1,199 @@
+@import '../../../mixin.scss';
+
+div {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.arrow-img {
+    transition: all ease .1s;
+    margin-right: 10px;
+}
+
+.drop-down-list {
+    transition: all ease .2s;
+    overflow: hidden;
+}
+
+.drop-down-list-open {
+    min-height: 5rem;
+    height: auto
+}
+
+
+.dropdown {
+    @include dFlex(flex-start, center);
+    position: relative;
+    width: 100%;
+    gap: 8px;
+    padding: 36px 0 0 24px;
+    transition: all ease 0.1s;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--purple1);
+
+        svg {
+            path {
+                fill: $purple1;
+            }
+        }
+    }
+}
+
+.list-channel {
+    margin-left: 2rem;
+    padding: 4px 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 400;
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 190px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ECEEFE;
+        border-radius: 20px;
+
+        path {
+            fill: $purple3;
+        }
+    }
+}
+
+.active-channel {
+    gap: 10px;
+    border-radius: 20px;
+    opacity: 0px;
+    background: #ECEEFE;
+    color: $purple3;
+    font-weight: 700;
+
+    path {
+        fill: $purple3;
+    }
+}
+
+.list-dm {
+    margin-left: 2rem;
+    margin-right: 6px;
+    padding: 4px 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ECEEFE;
+        border-radius: 35px;
+
+        path {
+            fill: $purple3;
+        }
+    }
+
+    span {
+        overflow: hidden;
+        max-width: 196px;
+    }
+}
+
+.active-dm {
+    border-radius: 35px;
+    opacity: 0px;
+    background-color: #ECEEFE;
+    color: $purple3;
+    font-weight: 700;
+
+    path {
+        fill: $purple3;
+    }
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.add-channel {
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+    padding: 4px 12px;
+    margin-top: 18px;
+    gap: 8px;
+
+    span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        span {
+            color: var(--purple1);
+            font-weight: 600;
+        }
+
+        .plus-img {
+            background-image: url('../../../../assets/img/general/plus-hover.svg');
+        }
+    }
+}
+
+.plus-img {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../../assets/img/general/plus.svg');
+    background-size: cover;
+}
+
+
+// max-width
+@media only screen and (max-width: 900px) {
+    .dropdown {
+        padding-top: 4px;
+    }
+
+    .add-channel {
+        margin-bottom: 32px;
+    }
+
+    .list-channel span {
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .list-dm,
+    .list-channel span {
+        font-size: 16px;
+    }
+
+    div {
+        font-size: 19px;
+    }
+
+    .profile-image {
+        width: 45px;
+        height: 45px;
+    }
+}

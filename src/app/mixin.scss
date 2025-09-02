@@ -1,0 +1,37 @@
+$bgColor: #ECEEFE;
+$lightPurple: #AEB0D9;
+$textGray: #686868;
+$purple1: #444DF2;
+$purple2: #797EF3;
+$lightPurple2: #797df386;
+$purple3: #535AF1;
+$onlineGreen: #91C93E;
+$rosaError: #ED1E7A;
+
+@mixin container() {
+    // display: flex;
+    // align-items: center;
+    flex-direction: column;
+    padding: 0 1.5rem 2rem;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+@mixin dFlex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin scaleElement($height: 100%, $width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin hoverEffect() {
+    background-color: $bgColor;
+    color: $purple3;
+    border-radius: 100px;
+    transition: ease-in 150ms;
+    cursor: pointer;
+}

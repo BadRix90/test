@@ -1,0 +1,225 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    width: 100%;
+    gap: 6.5%;
+}
+
+.function-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4%;
+}
+
+.head-logo {
+    height: 65px;
+}
+
+.user-container {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+
+    span {
+        font-size: 30px;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &:hover .arrow-img {
+        background-image: url('../../../assets/img/main-page/head/arrow-blue.svg');
+    }
+
+    &:hover span {
+        color: var(--purple2);
+    }
+}
+
+.arrow-img {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../../assets/img/main-page/head/arrow-bottom.svg');
+}
+
+.profile-img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.devspace-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    span {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.arrow-left {
+    width: 33px;
+}
+
+
+// max-width
+@media screen and (max-width: 1200px) {
+    .user-container {
+        height: 55px;
+        gap: 10px;
+
+        span {
+            font-size: 28px;
+        }
+    }
+
+    .arrow-img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .profile-img {
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+        margin-left: 4px;
+    }
+
+    header {
+        gap: 3.5%;
+    }
+
+    .head-logo {
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .user-container span {
+        max-width: 330px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .user-container span {
+        max-width: 202px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .user-container {
+        span {
+            display: none;
+        }
+    }
+
+    .arrow-img {
+        display: none;
+    }
+
+    header {
+        justify-content: space-between;
+        gap: unset;
+        padding: 16px 30px;
+    }
+
+    .function-container {
+        width: auto;
+    }
+
+    .head-logo {
+        height: 60px;
+    }
+
+    app-search-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .head-logo {
+        height: 50px;
+    }
+
+    .profile-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .devspace-mobile {
+        gap: 8px;
+
+        span {
+            font-size: 24px;
+        }
+    }
+
+    .devspace-logo {
+        height: 50px;
+    }
+
+    .arrow-left {
+        width: 29px;
+    }
+
+    header {
+        padding: 16px 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .devspace-mobile {
+        gap: 6px;
+
+        span {
+            font-size: 22px;
+        }
+    }
+
+    .devspace-logo {
+        height: 48px;
+    }
+
+    .arrow-left {
+        margin-left: -12px;
+        margin-right: -6px;
+    }
+
+    .profile-img {
+        height: 48px;
+        width: 48px;
+    }
+}
+
+
+// min-width
+@media screen and (min-width: 1700px) {
+    header {
+        gap: 8.5% !important;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    header {
+        gap: 5%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        gap: 4.5%;
+    }
+}

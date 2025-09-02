@@ -1,0 +1,30 @@
+<div class="d-flex">
+    <div class="content-container">
+        <div class="flex-box">
+            <div class="header-flex-box">
+                <div class="arrow-img" (click)="toggleToCreateAccount()"></div>
+                <h1>Wähle deinen Avatar</h1>
+            </div>
+            <img [src]="this.authService.selectedProfilePic" alt="unknown-image" (click)="fileInput.click()">
+            <p class="name">{{ this.authService.name }}</p>
+        </div>
+        <span>Aus der Liste wählen</span>
+        <div class="profile-icons">
+            <img *ngFor="let icon of profileIcons; let i = index" [src]="icon" alt="Profile Icon"
+                (click)="selectProfilePic(icon)">
+        </div>
+        <div class="choose-own-img">
+            <span>eigenes Bild nehmen</span><input class="file" type="file" accept="image/*"
+                (change)="onFileSelected($event)" #fileInput> <button (click)="fileInput.click()">Datei
+                hochladen</button>
+        </div>
+        <button class="next-btn" (click)="register()">Weiter</button>
+    </div>
+</div>
+<div class="warning-container" *ngIf="showReport">
+    <span>Diese E-Mail Adresse wurde schon registriert. Versuchen sie eine andere E-Mail Adresse.</span>
+    <button class="save-btn" (click)="hideReport()">OK</button>
+</div>
+<div class="success-report">
+    Konto erfolgreich erstellt!
+</div>

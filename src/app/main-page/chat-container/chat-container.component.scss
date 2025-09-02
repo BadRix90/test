@@ -1,0 +1,40 @@
+@import './../../mixin.scss';
+
+app-chat-header {
+    @include scaleElement(15%, 100%);
+    @include dFlex();
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem 2rem 0 0;
+    background-color: white;
+    position: relative;
+}
+
+form {
+    width: 100%
+}
+
+app-chat-content {
+    height: 100%;
+    @include dFlex(initial, center);
+    flex-direction: column;
+    overflow-y: scroll;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+app-chat-input {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+
+// max-width
+@media only screen and (max-width: 400px) {
+    app-chat-header {
+        border-radius: 0;
+    }
+}

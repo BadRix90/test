@@ -1,0 +1,30 @@
+<div class="profile-view-container" #profileView>
+    <div class="space-between">
+        <h1>Profil</h1>
+        <div (click)="close()" class="cross-img"></div>
+    </div>
+    <div class="user-img-container">
+        <img src="{{ this.auth.userImage }}">
+    </div>
+    <div class="space-between gap">
+        <span class="name">{{ this.auth.userName }}</span>
+        <span [ngStyle]="{'text-decoration': hint ? 'line-through var(--rosaError)' : 'none'}"
+            (click)="openEditProfile($event)" class="edit">Bearbeiten</span>
+        <img (click)="openEditProfile($event)" class="edit-img" style="display: none;"
+            src="assets/img/general/user-edit.svg">
+    </div>
+    <span *ngIf="hint" class="hint">Bearbeitungsfunktion nur für registrierte Benutzer verfügbar</span>
+    <div class="active-container">
+        <img src="assets/img/general/Online.svg">
+        <span>Aktiv</span>
+    </div>
+    <div class="email-container">
+        <img src="assets/img/general/mail.svg">
+        <div>
+            <span>E-Mail-Adresse</span>
+            <br>
+            <br>
+            <a href="mailto:{{ this.auth.userMail }}">{{ this.auth.userMail }}</a>
+        </div>
+    </div>
+</div>
